@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@using FruitCart.Models;
+
+
+    <table  class="table">
+        <tr>
+            <th>Option</th>           
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+        </tr>
+        @foreach (Item item in (List<Item>)Session["cart"])
+            {
+            <tr>
+                <td><a href="@Url.Action("Remove", "Cart", new { Id = item.Product.Id })">Remove</a></td>               
+                <td>@item.Product.Name</td>
+                <td>@item.Product.Price</td>
+                <td>@item.Quantity</td>
+                <td>@(item.Product.Price * item.Quantity)</td>
+            </tr>
+        }
+        <tr>
+            <td align="right" colspan="6">Sum</td>
+            <td>
+                @{
+                    List<Item> cart = (List<Item>)Session["cart"];
+                    var total = cart.Sum(item => item.Product.Price * item.Quantity);
+
+
+                }
+                @total
+            </td>
+            <td>
+                @{
+                    List<Item> cartItems = (List<Item>)Session["cart"];
+                    var totalWeightOfCart = cartItems.Sum(item => item.Product.Weight * item.Quantity);
+                    var message = "The cart has crossed maximum weight allowed";
+                }
+                @if (totalWeightOfCart > 3)
+                {
+                    @message
+                }
+            </td>
+
+        </tr>
+    </table>
+    <br>
+    @if (totalWeightOfCart <= 3)
+    {   <a href="@Url.Action("Index","Product")">Continue Shopping</a>}
+    <br />
+    <a href="@Url.Action("Index","User")">Submit Your Order</a>
+
+
+
+

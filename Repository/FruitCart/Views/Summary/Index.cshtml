@@ -1,0 +1,63 @@
+﻿@model FruitCart.Models.Summary
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (Model.CartItems.Count() <= 0)
+{
+    <br />
+    <h6>Your Cart is Empty</h6>
+}
+<h2>Order Summary</h2>
+@{ double? price =0.0;}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Fruits
+            </th>
+            <th>Price</th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Subtotal
+            </th>  
+            @*<th>Name</th>
+            <th>ShippingAddress</th>*@         
+        </tr>
+        
+            
+        
+    </thead>
+    <tbody>    
+    @foreach (var cart in Model.CartItems)
+    {
+
+        <tr>
+            <td>
+                @cart.Product.Name
+
+            </td>
+            <td>
+                @cart.Product.Price
+                @{  price = cart.Product.Price;}
+            </td>
+
+            <td>@cart.Quantity</td>
+
+            <td>@(cart.Quantity * price)</td>
+
+        </tr>
+                  }
+        <tr>
+            <th>Name</th>
+            <td>@Model.UserDetail.Name</td>
+            <th>Shipping Address</th>
+            <td>@Model.UserDetail.Address1 <br>@Model.UserDetail.Address2 <br>@Model.UserDetail.City<br>@Model.UserDetail.County<br> @Model.UserDetail.Country</td>
+            </tr>
+
+        </tbody>
+      
+</table>
+

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FruitCart", "FruitCart\FruitCart.csproj", "{0A4187E4-035D-4D6A-A6D4-57A4AF3C7777}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FruitCart.Tests", "FruitCart.Tests\FruitCart.Tests.csproj", "{7DA97648-126E-4D96-B9AE-EB91FC0B1972}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A4187E4-035D-4D6A-A6D4-57A4AF3C7777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A4187E4-035D-4D6A-A6D4-57A4AF3C7777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A4187E4-035D-4D6A-A6D4-57A4AF3C7777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A4187E4-035D-4D6A-A6D4-57A4AF3C7777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DA97648-126E-4D96-B9AE-EB91FC0B1972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DA97648-126E-4D96-B9AE-EB91FC0B1972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DA97648-126E-4D96-B9AE-EB91FC0B1972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DA97648-126E-4D96-B9AE-EB91FC0B1972}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
